@@ -1,0 +1,31 @@
+ int Torelay = 8; // signal to drive relay
+
+int soundsensor = 7; // input from sound sensor
+
+boolean state = false;
+
+void setup()
+
+{
+
+pinMode(Torelay, OUTPUT);
+
+pinMode(soundsensor, INPUT);
+
+}
+
+void loop(){
+
+if (digitalRead(soundsensor) == LOW)
+
+{
+
+delay(100);
+
+state = !state;
+
+digitalWrite(Torelay, state);
+
+}
+
+}
